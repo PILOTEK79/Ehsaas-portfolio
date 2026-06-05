@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Ehsaas Portfolio</title>
+<style>
+body{margin:0;font-family:Arial;background:#0b1020;color:white}
+#particles{position:fixed;inset:0;z-index:-1}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.card{background:rgba(255,255,255,.08);padding:20px;margin:20px;border-radius:15px}
+a{color:#9fb3ff}
+.fade{animation:fade 1.5s}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+form input,form textarea{width:100%;padding:10px;margin:8px 0}
+</style></head>
+<body>
+<canvas id="particles"></canvas>
+<div class="hero fade">
+<h1>Ehsaas</h1>
+<h3>Aspiring Web Developer & AI Enthusiast</h3>
+<a href="Ehsaas_Resume.pdf">Download Resume</a>
+</div>
+<div class="card"><h2>Certificate</h2>
+<p>Supervised Machine Learning: Regression and Classification (DeepLearning.AI & Stanford Online)</p></div>
+<div class="card"><h2>Projects</h2>
+<ul><li>Airline Reservation System</li><li>Modern Airline Web App</li><li>Restaurant Website</li><li>Gym Website</li></ul></div>
+<div class="card"><h2>Contact</h2>
+<form><input placeholder="Name"><input placeholder="Email"><textarea placeholder="Message"></textarea><button>Send</button></form>
+</div>
+<script>
+const c=document.getElementById('particles'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+let p=[...Array(60)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,v:1+Math.random()}));
+function a(){x.clearRect(0,0,c.width,c.height);p.forEach(o=>{o.y+=o.v;if(o.y>c.height)o.y=0;x.beginPath();x.arc(o.x,o.y,2,0,7);x.fillStyle='white';x.fill();});requestAnimationFrame(a)}a();
+</script>
+</body></html>
